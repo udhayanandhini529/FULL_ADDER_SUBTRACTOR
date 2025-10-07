@@ -37,19 +37,65 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+FULL ADDER
+
+<img width="456" height="388" alt="image" src="https://github.com/user-attachments/assets/9973fd22-f83f-46e5-b97b-132c8637cf65" />
+
+FULL SUBTRACTOR
+
+<img width="463" height="324" alt="image" src="https://github.com/user-attachments/assets/abad6f49-55d7-42b9-9de4-5b71a302f69c" />
+
 
 **Procedure**
 
 Write the detailed procedure here
+1.Type the program in Quartus software.
+2.Compile and run the program.
+3.Generate the RTL schematic and save the logic diagram.
+4.Create nodes for inputs and outputs to generate the timing diagram.
+5.For different input combinations generate the timing diagram.
+
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+/* Program to design a full subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:25007306
+*/i)FULL ADDER
+
+module fa(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=( (a ^ b)^cin);
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+endmodule
+
+ii)FULL SUBTRACTOR
+
+module fs(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( a & b)| ( bin & ((a ^ b ))));
+endmodule
 
 **RTL Schematic**
+FULL ADDER
+
+<img width="781" height="388" alt="image" src="https://github.com/user-attachments/assets/5ea11c3d-1fe6-4477-af36-97b4f401af7b" />
+
+FULL SUBTRACTOR
+
+<img width="776" height="404" alt="image" src="https://github.com/user-attachments/assets/6f436e43-0d30-4c54-b083-d0194821e71b" />
+
 
 **Output Timing Waveform**
+FULL ADDER
+
+<img width="783" height="396" alt="image" src="https://github.com/user-attachments/assets/64538c30-9fe6-4750-94ec-969157db3cfa" />
+
+FULL SUBTRACTOR
+
+<img width="774" height="403" alt="image" src="https://github.com/user-attachments/assets/a51d0ab7-5b5a-4d21-a5bd-183ec19d5a73" />
+
 
 **Result:**
 
